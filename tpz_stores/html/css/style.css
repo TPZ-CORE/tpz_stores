@@ -1,0 +1,730 @@
+@font-face {
+	font-family: crock;
+	src: url(../font/crock.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: texat;
+	src: url(../font/texat.otf) format('opentype');
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+
+	overflow: hidden;
+	display: none;
+    text-align: center;
+	justify-content: center;
+	align-items: center;
+
+	margin-left: -37vw;
+	margin-top: 5vw;
+}
+
+
+#shop_opened_title_display {
+	position: absolute;
+	
+	font-family: "texat", texat, serif;
+	color: #ddc076;
+
+	font-weight: bold;
+	font-size: 1.1vw;
+
+	width: 14vw;
+	margin-left: 3vw;
+	margin-top: 1.5vw;
+	text-align: center;
+
+}
+
+#shop_opened_title_footer {
+	position: absolute;
+	
+	font-family: "texat", texat, serif;
+	color: #8f8f8f;
+
+	font-weight: bold;
+	font-size: 0.5vw;
+
+	width: 14vw;
+	margin-left: 3vw;
+	margin-top: 3vw;
+	text-align: center;
+
+}
+
+#shop_back_button {
+	position: absolute;
+	
+	font-family: "crock", crock, serif;
+	color: #978d74;
+
+	font-weight: bold;
+	font-size: 0.8vw;
+
+	width: 2.7vw;
+	height: 1.1vw;
+
+	margin-top: 27.92vw;
+	margin-left: 3.2vw;
+
+	text-align: center;
+	background-color: rgba(41, 41, 41, 0.719);
+	border: 1px solid rgba(129, 129, 129, 0.253);
+}
+
+#shop_back_button:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+
+#objects_shop {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 5vw;
+    text-align: left;
+
+	background-image: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+	overflow: hidden;
+	width: 20vw;
+	height:32vw;
+
+	justify-content: center;
+
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
+}
+
+#categories, #types, #products {
+	position: absolute;
+	width: 18vw;
+	height: 17.4vw;
+  
+
+	margin-left: 1vw;
+	margin-top: 7.9vw;
+  
+	overflow-y: scroll;
+	border-radius: 1px;
+
+	opacity: 1;
+
+
+	padding-top: 1vw;
+}
+
+#categories_category_name, #type_categories_category_name{
+	position: relative;
+	font-weight: bold;
+	font-family: "crock", crock, serif;
+	color: rgba(184, 190, 147, 0.719);
+	font-size: 1vw;
+
+	background-image: url(../img/selection_box_bg_1d.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+#categories_category_name:hover, #type_categories_category_name:hover, #products_item_background_display:hover{
+	cursor: pointer;
+
+	
+	background-image: url(../img/selection_box_bg_1d.png), url(../img/selsected.png);
+
+	background-repeat: no-repeat, no-repeat;
+
+    background-size: 100% 100%;
+}
+
+#products_background_image{
+	position: absolute;
+
+	height: 3.8vw;
+	width: 16vw;
+	font-weight: bold;
+	font-family: "crock", crock, serif;
+	color: rgba(184, 190, 147, 0.719);
+	font-size: 1vw;
+
+	margin-left: 1vw;
+	margin-top: -0.4vw;
+	background-image: url(../img/selsected.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+	opacity: 0.3;
+
+}
+  
+
+#products_item_image_display img {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+
+}
+  
+#products_item_image_display {
+	position: relative;
+  
+	display: block;
+	height: 2.5vw;
+	width: 2.5vw;
+	
+	margin-top: 0.2vw;
+  
+	margin-left: -60.1%;
+  
+  
+	background-color: #e0e0e065;
+
+	border-radius: 50%;
+
+	border: 2px solid rgba(124, 3, 3, 0.747);
+  
+}
+
+
+#products_item_image_display:hover{
+	opacity: 0.7;
+}
+
+
+#products_item_background_display img {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+
+  }
+  
+#products_item_background_display {
+	position: relative;
+  
+	display: inline-block;
+	height: 2.5vw;
+	width: 10.5vw;
+	
+	margin-top: -2.2vw;
+  
+  
+  
+	background-color: #e0e0e065;
+  
+}
+
+#products_item_info_display{
+	position: absolute;
+
+	display: inline-block;
+
+	width: 1vw;
+	height: 2.8vw;
+
+	font-family: "crock", crock, serif;
+	color: rgba(203, 216, 117, 0.719);
+	font-size: 0.7vw;
+
+	margin-top: -2.6vw;
+	margin-left: -7.7vw;
+
+	text-align: left;
+
+}
+
+#products_item_label{
+	position: absolute;
+
+	display: inline-block;
+
+	width: 11vw;
+	height: 2.8vw;
+
+	font-family: "crock", crock, serif;
+	color: rgba(203, 216, 117, 0.719);
+	font-size: 0.7vw;
+
+	margin-top: -2.6vw;
+	margin-left: -3.3vw;
+
+	text-align: left;
+
+}
+
+#products_item_cost{
+	position: absolute;
+
+	display: inline-block;
+
+	width: 8vw;
+
+	height: 2.8vw;
+
+	font-family: "crock", crock, serif;
+	color: rgba(184, 190, 147, 0.719);
+	font-size: 0.55vw;
+
+	margin-top: -1.55vw;
+	margin-left: -3.3vw;
+
+	text-align: left;
+
+}
+
+#products_item_quantity_left{
+	position: absolute;
+
+	display: inline-block;
+
+	width: 8vw;
+
+	height: 2.8vw;
+
+	font-family: "crock", crock, serif;
+	color: rgba(184, 190, 147, 0.719);
+	font-size: 0.55vw;
+
+	margin-top: -0.7vw;
+	margin-left: -3.3vw;
+
+	text-align: left;
+
+}
+
+#player_account_information_text{
+	position: absolute;
+
+	width: 16vw;
+	height: 1vw;
+
+	font-family: "crock", crock, serif;
+	color: rgba(184, 190, 147, 0.719);
+	font-size: 0.6vw;
+
+	margin-top: 29.7vw;
+	margin-left: 2vw;
+
+	text-align: center;
+
+
+}
+
+#products_select_button {
+	position: absolute;
+	
+	font-family: "crock", crock, serif;
+	color: #978d74;
+
+	font-weight: bold;
+	font-size: 0.8vw;
+
+	width: 2.7vw;
+
+	margin-left: 13.5vw;
+	margin-top: -2vw;
+
+	text-align: center;
+	background-color: rgba(41, 41, 41, 0.719);
+	border: 1px solid rgba(129, 129, 129, 0.253);
+}
+
+
+#products_select_button:hover {
+
+	opacity: 0.8;
+}
+
+#products_item_amount {
+	position: absolute;
+	
+	font-family: Arial, Helvetica, sans-serif;
+  
+	color: rgb(199, 199, 199);
+	  font-size: 0.7vw;
+  
+	font-weight: bold;
+  
+	width: 2vw;
+	height: 1.3vw;
+  
+	margin-left: 3vw;
+	margin-top: -2vw;
+
+
+	text-align: center;
+  
+	background-color: rgba(31, 31, 31, 0.651);
+}
+  
+#products_selected_item_display{
+	position: absolute;
+
+	width: 16vw;
+	height: 1vw;
+
+	font-family: "crock", crock, serif;
+	color: rgba(203, 216, 117, 0.719);
+	font-size: 0.8vw;
+
+	margin-top: 26.4vw;
+	margin-left: 2vw;
+
+	text-align: center;
+
+
+}
+
+#products_item_amount_input {
+	position: absolute;
+	
+	font-family: Arial, Helvetica, sans-serif;
+  
+	color: rgb(199, 199, 199);
+	  font-size: 0.7vw;
+  
+	font-weight: bold;
+  
+	width: 3vw;
+	height: 1.2vw;
+  
+	margin-top: 27.9vw;
+	margin-left: 8.5vw;
+	text-align: center;
+  
+	background-color: rgba(31, 31, 31, 0.651);
+}
+
+#products_action_button {
+	position: absolute;
+	
+	font-family: "crock", crock, serif;
+	color: #978d74;
+
+	font-weight: bold;
+	font-size: 0.8vw;
+
+	width: 2.7vw;
+	height: 1.1vw;
+
+	margin-top: 27.92vw;
+	margin-left: 14vw;
+
+	text-align: center;
+	background-color: rgba(41, 41, 41, 0.719);
+	border: 1px solid rgba(129, 129, 129, 0.253);
+}
+
+
+#products_action_button:hover {
+
+	opacity: 0.8;
+}
+
+#objects{
+	position: absolute;
+	width: 18vw;
+	height: 17.4vw;
+  
+
+	margin-left: 1vw;
+	margin-top: 7.9vw;
+  
+	overflow-y: scroll;
+	border-radius: 1px;
+
+	opacity: 1;
+
+}
+
+
+#object_box_img img{
+
+	position: relative;
+	width: 16vw;
+
+	background-size: contain;
+	background-position-x: center;
+
+	height: 8vw;
+	background-repeat: no-repeat;
+}
+
+#object_box_img img:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+
+#object_box_rate{
+	position: relative;
+	font-family: "crock", crock, serif;
+	color: rgba(221, 255, 0, 0.719);
+	font-size: 0.8vw;
+}
+  
+#object_box_description{
+	position: relative;
+	font-family: "crock", crock, serif;
+	color: rgba(184, 190, 147, 0.719);
+	font-size: 0.8vw;
+}
+  
+#object_click_to_display_button{
+	position: relative;
+	font-family: "crock", crock, serif;
+	color: #584e37;
+	font-size: 0.8vw;
+
+	width: auto;
+	height: auto;
+
+	text-align: center;
+}
+
+#object_click_to_display_button:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+#object_dialog_model_title {
+	position: absolute;
+	
+	font-family: "crock", crock, serif;
+	color: #ddc076;
+
+	font-weight: bold;
+	font-size: 0.7vw;
+
+	width: 17vw;
+	margin-top: 27vw;
+	margin-left: 1.5vw;
+	text-align: center;
+}
+
+
+
+#object_dialog_display_button {
+	position: absolute;
+	
+	font-family: "crock", crock, serif;
+	color: #978d74;
+
+	font-weight: bold;
+	font-size: 0.8vw;
+
+	width: 6vw;
+	margin-top: 28.55vw;
+	margin-left: 7.0vw;
+
+	text-align: center;
+	background-color: rgba(41, 41, 41, 0.719);
+	border: 1px solid rgba(129, 129, 129, 0.253);
+}
+
+#object_dialog_display_button:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+#object_dialog_rotate_l_button {
+	position: absolute;
+	
+	font-family: "crock", crock, serif;
+	color: #978d74;
+
+	font-weight: bold;
+	font-size: 0.8vw;
+
+	width: 1vw;
+	margin-top: 28.55vw;
+	margin-left: 14.8vw;
+
+	text-align: center;
+	background-color: rgba(41, 41, 41, 0.719);
+	border: 1px solid rgba(129, 129, 129, 0.253);
+}
+
+#object_dialog_rotate_l_button:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+#object_dialog_rotate_r_button {
+	position: absolute;
+	
+	font-family: "crock", crock, serif;
+	color: #978d74;
+
+	font-weight: bold;
+	font-size: 0.8vw;
+
+	width: 1vw;
+	margin-top: 28.55vw;
+	margin-left: 16.8vw;
+
+	text-align: center;
+	background-color: rgba(41, 41, 41, 0.719);
+	border: 1px solid rgba(129, 129, 129, 0.253);
+}
+
+#object_dialog_rotate_r_button:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+input[type=text] {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: 0.8vw;
+	width: 90%;
+	color: rgba(255, 255, 255, 0.719);
+	height: 50px;
+	text-align: center;
+	background-color: rgb(27, 27, 27, 0.719);
+	border-color: rgb(58, 58, 58, 0.719);
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+select[type=field] {
+	font-family: "Prototype", serif;
+	font-size: 0.8vw;
+	width: 90%;
+	color: rgba(255, 255, 255, 0.719);
+	height: 50px;
+	text-align: center;
+	background-color: rgb(27, 27, 27, 0.719);
+	border-color: rgb(58, 58, 58, 0.719);
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+
+button {
+	font-family: "Prototype", serif;
+	display: block;
+	margin-top: 0px;
+	padding: 10px;
+	background-color: #5f1f1fb9;
+	border: 0;
+	color: rgba(255, 255, 255, 0.719);
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+
+	font-size: 0.8vw;
+}
+
+button:hover{
+
+	cursor: pointer;
+	background-color: rgb(87, 0, 0);
+	box-shadow: 0px 0px 15px rgb(87, 0, 0);
+}
+
+#count {
+    border: none;
+    outline: none;
+    font-size: 0.9vw;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+.hoverControl {
+    background-color: rgba(31, 31, 31, 0.589);
+	user-select: none;
+}
+
+
+
+.radio {
+	font-family: "Prototype", serif;
+	text-align: center;
+	font-size: 0.8vw;
+	color: rgba(255, 255, 255, 0.719);
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 0.5vw;
+	border-radius: 0.1vw;
+	height: 0.55vw;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #ddc076;
+	border-radius: 0.5vw;
+	height: 0.55vw;
+}
+
+*.unselectable {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+ 
+	/*
+	  Introduced in Internet Explorer 10.
+	  See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+}
+
+*[data-tooltip] {
+    position: absolute;
+}
+
+*[data-tooltip]::after {
+    content: attr(data-tooltip);
+
+    position: absolute;
+
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	color: rgba(203, 216, 117, 0.719);
+
+	display: block;
+	text-align: left;
+    font-size: 0.5vw;
+
+    width: 8vw;
+	height: fit-content;
+
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition: opacity .15s ease-in-out;
+    -moz-transition: opacity .15s ease-in-out;
+    -ms-transition: opacity .15s ease-in-out;
+    -o-transition: opacity .15s ease-in-out;
+    transition: opacity .15s ease-in-out;
+
+    background: #000214f1;
+    padding: 2px 2px;
+    border: 1px solid rgb(156, 156, 156);
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+*[data-tooltip]:hover::after {
+    opacity: 1;
+}
