@@ -209,7 +209,7 @@ AddEventHandler('tpz_stores:server:sell', function(storeId, categoryName, item, 
 	if ItemData == nil or ItemData.price ~= oldCost or ItemData.account ~= accountType or ItemData.category ~= categoryName then
         if Config.Webhooks['DEVTOOLS_INJECTION_CHEAT'].Enabled then
             local _w, _c      = Config.Webhooks['DEVTOOLS_INJECTION_CHEAT'].Url, Config.Webhooks['DEVTOOLS_INJECTION_CHEAT'].Color
-            local description = 'The specified user attempted to use devtools / injection cheat on stores for buying products.'
+            local description = 'The specified user attempted to use devtools / injection cheat on stores for selling products.'
             TPZ.SendToDiscordWithPlayerParameters(_w, Locales['DEVTOOLS_INJECTION_DETECTED_TITLE_LOG'], _source, PlayerData.steamName, PlayerData.username, PlayerData.identifier, PlayerData.charIdentifier, description, _c)
         end
 
