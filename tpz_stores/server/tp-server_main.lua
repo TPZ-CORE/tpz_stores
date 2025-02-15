@@ -74,6 +74,12 @@ AddEventHandler('tpz_stores:server:buy', function(storeId, categoryName, item, q
 	local PlayerData     = GetPlayerData(_source)
 
 	quantity             = tonumber(quantity)
+	quantity             = math.floor(quantity)
+
+	if quantity <= 0 then
+		SendNotification(_source, Locales["INVALID_QUANTITY"], "error")
+		return
+	end
 
 	local oldCost        = itemCost
 	local totalCost      = (itemCost * quantity)
@@ -184,6 +190,12 @@ AddEventHandler('tpz_stores:server:sell', function(storeId, categoryName, item, 
 	local PlayerData     = GetPlayerData(_source)
 
 	quantity             = tonumber(quantity)
+	quantity             = math.floor(quantity)
+
+	if quantity <= 0 then
+		SendNotification(_source, Locales["INVALID_QUANTITY"], "error")
+		return
+	end
 
 	local oldCost        = itemCost
 	local totalCost      = (itemCost * quantity)
