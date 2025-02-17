@@ -64,6 +64,12 @@ end)
 RegisterNetEvent("tpz_stores:client:updateAccount")
 AddEventHandler("tpz_stores:client:updateAccount", function(account)
     PlayerData.Account = account
+
+    if PlayerData.IsBusy then -- Updating subtext (description) on MenuData (tpz_menu_base) when the account has been updated.
+        local subtext = string.format(Locales['CURRENT_ACCOUNT'], PlayerData.Account[1], PlayerData.Account[2])
+        exports.tpz_menu_base:UpdateCurrentSubtextDescription(subtext)
+    end
+    
 end)
 
 ---------------------------------------------------------------
