@@ -32,12 +32,16 @@ Config.Stores = {
             Allowed = true,
             Name    = "General Store",
             Sprite  = 1475879922,
+
+            OpenBlipModifier = 'BLIP_MODIFIER_MP_COLOR_32',
+            DisplayClosedHours = { Enabled = true, Sprite = 1475879922, BlipModifier = "BLIP_MODIFIER_MP_COLOR_2" },
         },
 
         NPCData = {
             Allowed = true,
             Model   = "u_m_m_walgeneralstoreowner_01",
             Coords  = { x = -324.628, y = 803.9818, z = 116.88, h = -81.17 },
+            
         },
 
         Hours = { Allowed = true, Opening = 7, Closing = 23 },
