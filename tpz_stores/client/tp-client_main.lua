@@ -10,6 +10,34 @@ local PlayerData = {
 --[[ Local Functions ]]--
 ---------------------------------------------------------------
 
+local function IsStoreOpen(storeConfig)
+
+    if not storeConfig.Hours.Allowed then
+        return true
+    end
+
+    local hour = GetClockHours()
+    
+    if storeConfig.Hours.Opening < storeConfig.Hours.Closing then
+        -- Normal hours: Opening and closing on the same day (e.g., 08 to 20)
+        if hour < storeConfig.Hours.Opening or hour >= storeConfig.Hours.Closing then
+            return false
+        end
+    else
+        -- Overnight hours: Closing time is on the next day (e.g., 21 to 05)
+        if hour < storeConfig.Hours.Opening and hour >= storeConfig.Hours.Closing then
+            return false
+        end
+    end
+
+    return true
+
+end
+
+---------------------------------------------------------------
+--[[ Functions ]]--
+---------------------------------------------------------------
+
 -- @GetPlayerData returns PlayerData list with all the available player information.
 GetPlayerData = function ()
     return PlayerData
@@ -112,21 +140,28 @@ Citizen.CreateThread(function()
                     storeConfig.NPC = nil
                 end
 
-                local isAllowed = false
-                
-                if storeConfig.Hours.Allowed then
+                local isAllowed = IsStoreOpen(storeConfig)
 
-                    if hour >= storeConfig.Hours.Opening and hour < storeConfig.Hours.Closing then
-                        isAllowed = true
+                if storeConfig.BlipData.Allowed then
+    
+                    local ClosedHoursData = storeConfig.BlipData.DisplayClosedHours
+
+                    if isAllowed ~= storeConfig.IsAllowed and storeConfig.BlipHandle then
+
+                        RemoveBlip(storeConfig.BlipHandle)
+                        
+                        Config.Stores[storeId].BlipHandle = nil
+                        Config.Stores[storeId].IsAllowed = isAllowed
+
                     end
 
-                else
-                    isAllowed = true
-                end
+                    if (isAllowed and storeConfig.BlipHandle == nil) or (not isAllowed and ClosedHoursData and ClosedHoursData.Enabled and storeConfig.BlipHandle == nil ) then
+                        local blipModifier = isAllowed and 'OPEN' or 'CLOSED'
+                        AddBlip(storeId, blipModifier)
 
-                if storeConfig.BlipHandle and not isAllowed then
-                    RemoveBlip(storeConfig.BlipHandle)
-                    storeConfig.BlipHandle = nil
+                        Config.Stores[storeId].IsAllowed = isAllowed
+                    end
+
                 end
 
                 if storeConfig.NPC and not isAllowed then
@@ -134,11 +169,8 @@ Citizen.CreateThread(function()
                     storeConfig.NPC = nil
                 end
 
-                if isAllowed then
 
-                    if not storeConfig.BlipHandle and storeConfig.BlipData.Allowed then
-                        AddBlip(storeId)
-                    end
+                if isAllowed then
 
                     if not storeConfig.NPC and storeConfig.NPCData.Allowed and distance <= Config.NPCRenderingSpawnDistance then
                         SpawnNPC(storeId)
