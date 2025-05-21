@@ -62,14 +62,34 @@ end
  Blips
 ]]---------------------------------------------------------
 
+function AddBlip(Store, StatusType)
 
-function AddBlip(Store)
     if Config.Stores[Store].BlipData then
+
+        local BlipData = Config.Stores[Store].BlipData
+
+        local sprite, blipModifier = BlipData.Sprite, 'BLIP_MODIFIER_MP_COLOR_32'
+
+        if BlipData.OpenBlipModifier then
+            blipModifier = BlipData.OpenBlipModifier
+        end
+
+        if StatusType == 'CLOSED' then
+            sprite = BlipData.DisplayClosedHours.Sprite
+            blipModifier = BlipData.DisplayClosedHours.BlipModifier
+        end
+        
         Config.Stores[Store].BlipHandle = N_0x554d9d53f696d002(1664425300, Config.Stores[Store].Coords.x, Config.Stores[Store].Coords.y, Config.Stores[Store].Coords.z)
 
-        SetBlipSprite(Config.Stores[Store].BlipHandle, Config.Stores[Store].BlipData.Sprite, 1)
+        SetBlipSprite(Config.Stores[Store].BlipHandle, sprite, 1)
         SetBlipScale(Config.Stores[Store].BlipHandle, 0.2)
-        Citizen.InvokeNative(0x9CB1A1623062F402, Config.Stores[Store].BlipHandle, Config.Stores[Store].BlipData.Name)
+
+        Citizen.InvokeNative(0x662D364ABF16DE2F, Config.Stores[Store].BlipHandle, GetHashKey(blipModifier))
+
+        Config.Stores[Store].BlipHandleModifier = blipModifier
+
+        Citizen.InvokeNative(0x9CB1A1623062F402, Config.Stores[Store].BlipHandle, BlipData.Name)
+
     end
 end
 
