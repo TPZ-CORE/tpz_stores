@@ -129,83 +129,86 @@ Citizen.CreateThread(function()
 
             for storeId, storeConfig in pairs(Config.Stores) do
 
-                local coordsDist  = vector3(coords.x, coords.y, coords.z)
-                local coordsStore = vector3(storeConfig.Coords.x, storeConfig.Coords.y, storeConfig.Coords.z)
-                local distance    = #(coordsDist - coordsStore)
-
-                -- Before everything, we are removing spawned entities if the rendering distance
-                -- is bigger than the configurable max distance.
-                if storeConfig.NPC and distance > Config.NPCRenderingSpawnDistance then
-                    RemoveEntityProperly(storeConfig.NPC, GetHashKey(storeConfig.NPCData.Model) )
-                    storeConfig.NPC = nil
-                end
-
-                local isAllowed = IsStoreOpen(storeConfig)
-
-                if storeConfig.BlipData.Allowed then
+                if not storeConfig.IsCustom then
+                    local coordsDist  = vector3(coords.x, coords.y, coords.z)
+                    local coordsStore = vector3(storeConfig.Coords.x, storeConfig.Coords.y, storeConfig.Coords.z)
+                    local distance    = #(coordsDist - coordsStore)
     
-                    local ClosedHoursData = storeConfig.BlipData.DisplayClosedHours
-
-                    if isAllowed ~= storeConfig.IsAllowed and storeConfig.BlipHandle then
-
-                        RemoveBlip(storeConfig.BlipHandle)
-                        
-                        Config.Stores[storeId].BlipHandle = nil
-                        Config.Stores[storeId].IsAllowed = isAllowed
-
+                    -- Before everything, we are removing spawned entities if the rendering distance
+                    -- is bigger than the configurable max distance.
+                    if storeConfig.NPC and distance > Config.NPCRenderingSpawnDistance then
+                        RemoveEntityProperly(storeConfig.NPC, GetHashKey(storeConfig.NPCData.Model) )
+                        storeConfig.NPC = nil
                     end
-
-                    if (isAllowed and storeConfig.BlipHandle == nil) or (not isAllowed and ClosedHoursData and ClosedHoursData.Enabled and storeConfig.BlipHandle == nil ) then
-                        local blipModifier = isAllowed and 'OPEN' or 'CLOSED'
-                        AddBlip(storeId, blipModifier)
-
-                        Config.Stores[storeId].IsAllowed = isAllowed
-                    end
-
-                end
-
-                if storeConfig.NPC and not isAllowed then
-                    RemoveEntityProperly(storeConfig.NPC, GetHashKey(storeConfig.NPCData.Model) )
-                    storeConfig.NPC = nil
-                end
-
-
-                if isAllowed then
-
-                    if not storeConfig.NPC and storeConfig.NPCData.Allowed and distance <= Config.NPCRenderingSpawnDistance then
-                        SpawnNPC(storeId)
-                    end
-
-                    if (distance <= storeConfig.DistanceOpenStore) and (not storeConfig.HasTarget) then
-                        sleep = false
-
-                        local promptGroup, promptList = GetPromptData()
-
-                        local label = CreateVarString(10, 'LITERAL_STRING', storeConfig.StoreName)
-                        PromptSetActiveGroupThisFrame(promptGroup, label)
-
-                        if PromptHasHoldModeCompleted(promptList) then
-
-                            local hasRequiredJob = true
-
-                            if storeConfig.RequiredJobs then
-                                hasRequiredJob = ContainsRequiredParameterOnTable(storeConfig.RequiredJobs, PlayerData.Job)
-                            end
     
-                            if hasRequiredJob then
-                                TriggerServerEvent('tpz_stores:server:requestAccountInformation')
-
-                                Wait(500)
-                                OpenStoreCategoryMenu(storeId)
-
-                            else
-                                SendNotification(nil, Locales['NOT_VALID_JOB'], "error")
-                            end
+                    local isAllowed = IsStoreOpen(storeConfig)
     
-                            Wait(1000)
-                        
+                    if storeConfig.BlipData.Allowed then
+        
+                        local ClosedHoursData = storeConfig.BlipData.DisplayClosedHours
+    
+                        if isAllowed ~= storeConfig.IsAllowed and storeConfig.BlipHandle then
+    
+                            RemoveBlip(storeConfig.BlipHandle)
+                            
+                            Config.Stores[storeId].BlipHandle = nil
+                            Config.Stores[storeId].IsAllowed = isAllowed
+    
                         end
-
+    
+                        if (isAllowed and storeConfig.BlipHandle == nil) or (not isAllowed and ClosedHoursData and ClosedHoursData.Enabled and storeConfig.BlipHandle == nil ) then
+                            local blipModifier = isAllowed and 'OPEN' or 'CLOSED'
+                            AddBlip(storeId, blipModifier)
+    
+                            Config.Stores[storeId].IsAllowed = isAllowed
+                        end
+    
+                    end
+    
+                    if storeConfig.NPC and not isAllowed then
+                        RemoveEntityProperly(storeConfig.NPC, GetHashKey(storeConfig.NPCData.Model) )
+                        storeConfig.NPC = nil
+                    end
+    
+    
+                    if isAllowed then
+    
+                        if not storeConfig.NPC and storeConfig.NPCData.Allowed and distance <= Config.NPCRenderingSpawnDistance then
+                            SpawnNPC(storeId)
+                        end
+    
+                        if (distance <= storeConfig.DistanceOpenStore) and (not storeConfig.HasTarget) then
+                            sleep = false
+    
+                            local promptGroup, promptList = GetPromptData()
+    
+                            local label = CreateVarString(10, 'LITERAL_STRING', storeConfig.StoreName)
+                            PromptSetActiveGroupThisFrame(promptGroup, label)
+    
+                            if PromptHasHoldModeCompleted(promptList) then
+    
+                                local hasRequiredJob = true
+    
+                                if storeConfig.RequiredJobs then
+                                    hasRequiredJob = ContainsRequiredParameterOnTable(storeConfig.RequiredJobs, PlayerData.Job)
+                                end
+        
+                                if hasRequiredJob then
+                                    TriggerServerEvent('tpz_stores:server:requestAccountInformation')
+    
+                                    Wait(500)
+                                    OpenStoreCategoryMenu(storeId)
+    
+                                else
+                                    SendNotification(nil, Locales['NOT_VALID_JOB'], "error")
+                                end
+        
+                                Wait(1000)
+                            
+                            end
+    
+                        end
+    
                     end
 
                 end
