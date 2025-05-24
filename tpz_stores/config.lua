@@ -25,7 +25,7 @@ Config.Stores = {
 
         -- THE SPECIFIED STORE IS AN EXAMPLE FOR CUSTOM STORES, A CUSTOM STORE IS FOR GETTING OPENED THROUGH AN EXPORT.
         -- IT DOES NOT HAVE BLIPS, COORDS, DISTANCE TO OPEN, NPC OR ANYTHING, ONLY PRODUCTS.
-        IsCustom  = true, -- <---------
+        IsCustom  = false, -- <---------
         
         -- Blip & Store Prompt Action Positions.
         Coords = { x = -324.628, y = 803.9818, z = 116.88, h = -81.17 },
