@@ -13,6 +13,10 @@ Config.Debug   = false
 -- This system is for preventing Pool AI Crashes and not loading all NPC's for no reason when the player is not close to that location.
 Config.NPCRenderingSpawnDistance = 20
 
+-- Set tpz_leveling true to use the leveling api functions for specific
+-- products to buy or sell. 
+Config.tpz_leveling = false
+
 ---------------------------------------------------------------
 --[[ Stores & Locations ]]--
 ---------------------------------------------------------------
@@ -78,19 +82,19 @@ Config.StoreProductPackages = {
         ['buy'] = {
 
             -- tools
-            { label = "Rolling Paper",          item = "rollingpaper",            account = "dollars",   price = 5,     isWeapon = false, category = "miscellaneous" },
+            { label = "Rolling Paper",        item = "rollingpaper",           account = "dollars",  price = 5,     isWeapon = false, category = "miscellaneous", requiredLevelingType = false, requiredLevel = 1 },
 
             -- consumables
-            { label = "Water Bottle",           item = "consumable_water_bottle", account = "dollars",   price = 15,    isWeapon = false, category = "consumables" },
-            { label = "Coffee",                 item = "consumable_coffee",       account = "dollars",   price = 20,    isWeapon = false, category = "consumables" },
+            { label = "Water Bottle",           item = "consumable_water_bottle", account = "dollars",   price = 15,    isWeapon = false, category = "consumables", requiredLevelingType = false, requiredLevel = 1 },
+            { label = "Coffee",                 item = "consumable_coffee",       account = "dollars",   price = 20,    isWeapon = false, category = "consumables", requiredLevelingType = false, requiredLevel = 1 },
            
             -- food
-            { label = "Peach",                  item = "consumable_peach",        account = "dollars",   price = 25,    isWeapon = false, category = "food" },
-            { label = "Bread",                  item = "consumable_bread",        account = "dollars",   price = 35,    isWeapon = false, category = "food" },
+            { label = "Peach",                  item = "consumable_peach",        account = "dollars",   price = 25,    isWeapon = false, category = "food", requiredLevelingType = false, requiredLevel = 1 },
+            { label = "Bread",                  item = "consumable_bread",        account = "dollars",   price = 35,    isWeapon = false, category = "food", requiredLevelingType = false, requiredLevel = 1 },
         },
 
         ['sell'] = { -- (!) IsWeapon option does not exist on selling, we do not allow selling weapons.
-            { label = "Empty Bottle",           item = "emptybottle",             account = "dollars",   price = 10,    category = "miscellaneous" },
+            { label = "Empty Bottle",           item = "emptybottle",             account = "dollars",   price = 10,    category = "miscellaneous", requiredLevelingType = false, requiredLevel = 1 },
         },
 
     },
