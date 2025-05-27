@@ -140,15 +140,34 @@ function OpenStoreCategoryByCategoryActionType(storeId, categoryName, configData
     for _, product in pairs (products) do 
 
         if categoryName == product.category then
-            table.insert(elements, { 
-                label    = IMAGE_PATH:format("left", product.item) .. TITLE_STYLE:format(product.label) .. " " .. LABEL_STYLE:format("X1 " .. product.price .. " " .. product.account ),
-                value    = product.item,
-                cost     = product.price,
-                account  = product.account,
-                title    = product.label,
-                isWeapon = product.isWeapon,
-                desc     = string.format(Locales['PRESS_TO_' .. string.upper(actionType)], product.label, product.price, Locales[string.upper(product.account)])
-            })
+
+            local displayProduct = false
+
+            if Config.tpz_leveling and product.requiredLevelingType ~= false then
+                local levelTypeData = exports.tpz_leveling:GetLevelTypeExperienceData(product.requiredLevelingType)
+
+                if levelTypeData and product.requiredLevel <= levelTypeData.level then
+                    displayProduct = true
+                end
+
+            else
+                displayProduct = true
+            end
+
+            if displayProduct then
+
+                table.insert(elements, { 
+                    label    = IMAGE_PATH:format("left", product.item) .. TITLE_STYLE:format(product.label) .. " " .. LABEL_STYLE:format("X1 " .. product.price .. " " .. product.account ),
+                    value    = product.item,
+                    cost     = product.price,
+                    account  = product.account,
+                    title    = product.label,
+                    isWeapon = product.isWeapon,
+                    desc     = string.format(Locales['PRESS_TO_' .. string.upper(actionType)], product.label, product.price, Locales[string.upper(product.account)])
+                })
+
+            end
+
         end
 
     end
