@@ -74,7 +74,13 @@ Config.Stores = {
 
 }
 
--- Available account types: "dollars", "gold"
+-- @param account: Available account types: "dollars", "gold"
+
+-- @param requiredLevelingType : The tpz_leveling types such as: mining, lumberjack, hunting, farming, fishing
+-- Set @requiredLevelingType = false to disable. 
+
+-- @param requiredLevel : The required minimum level to buy or sell a product. 
+
 Config.StoreProductPackages = {
 
     ['general_store'] = {
