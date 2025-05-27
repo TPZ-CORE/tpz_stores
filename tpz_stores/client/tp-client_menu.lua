@@ -146,7 +146,7 @@ function OpenStoreCategoryByCategoryActionType(storeId, categoryName, configData
             if Config.tpz_leveling and product.requiredLevelingType ~= false then
                 local levelTypeData = exports.tpz_leveling:GetLevelTypeExperienceData(product.requiredLevelingType)
 
-                if levelTypeData and product.requiredLevel <= levelTypeData.level then
+                if levelTypeData and tonumber(product.requiredLevel) <= tonumber(levelTypeData.level) then
                     displayProduct = true
                 end
 
