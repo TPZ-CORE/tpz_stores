@@ -23,6 +23,26 @@ Config.tpz_leveling = false
 
 Config.Stores = {
 
+    ['BUTCHER'] = {
+
+        StoreName = "BUTCHER",
+
+        -- THE SPECIFIED STORE IS AN EXAMPLE FOR CUSTOM STORES, A CUSTOM STORE IS FOR GETTING OPENED THROUGH AN EXPORT.
+        -- IT DOES NOT HAVE BLIPS, COORDS, DISTANCE TO OPEN, NPC OR ANYTHING, ONLY PRODUCTS.
+        IsCustom  = true, -- <---------
+
+        Categories = { 
+            { type = "hunting",        label = 'Hunting',       description = '',  types = {"sell" } },
+            { type = "birds",          label = 'Animals',       description = '',  types = {"sell"} },
+            { type = "small_animals",  label = 'Small Animals', description = '',  types = {"sell"} },
+            { type = "reptiles",       label = 'Repites',       description = '',  types = {"sell"} },
+        }, 
+        
+
+        -- The store name that has been created on Config.StoreProductPackages.
+        StoreProductsPackage = "butcher_store",
+    },
+    
     ['GENERAL_STORE_VALENTINE'] = {
 
         StoreName = "GENERAL STORE",
@@ -101,6 +121,65 @@ Config.StoreProductPackages = {
 
         ['sell'] = { -- (!) IsWeapon option does not exist on selling, we do not allow selling weapons.
             { label = "Empty Bottle",           item = "emptybottle",             account = "dollars",   price = 10,    category = "miscellaneous", requiredLevelingType = false, requiredLevel = 1 },
+        },
+
+    },
+
+    ['butcher_store'] = {
+
+        ['sell'] = {
+
+            { label = "Fish Bones",                  item = "animal_fish_bones",           account = "dollars",   price = 0.10,  category = "hunting", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Fibers",                      item = "fibers",                      account = "dollars",   price = 0.20,  category = "hunting", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Leather",                     item = "leather",                     account = "dollars",   price = 0.30,  category = "hunting", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Feathers",                    item = "feathers",                    account = "dollars",   price = 0.40,  category = "hunting", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Fabric",                      item = "fabric",                      account = "dollars",   price = 0.60,  category = "hunting", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Snake Skin",                  item = "SnakeSkin",                   account = "dollars",   price = 0.60,  category = "hunting", requiredLevelingType = false, requiredLevel = 1  },
+
+            { label = "Fur",                         item = "fur",                         account = "dollars",   price = 0.7,   category = "hunting", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Pelt",                        item = "pelt",                        account = "dollars",   price = 0.7,   category = "hunting", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Bird Meat",                   item = "birdmeat",                    account = "dollars",   price = 0.8,   category = "hunting", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Fish Meat",                   item = "fish_meat",                   account = "dollars",   price = 0.9,   category = "hunting", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Meat",                        item = "meat",                        account = "dollars",   price = 0.9,   category = "hunting", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Big Game Meat",               item = "biggame",                     account = "dollars",   price = 0.10,  category = "hunting", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Bison Meat",                  item = "bison_meat",                  account = "dollars",   price = 0.12,  category = "hunting", requiredLevelingType = false, requiredLevel = 1  },
+            -- Animals
+
+            -- [BIRDS]
+            { label = "Crow",                        item = "a_c_crow_01",                 account = "dollars",   price = 0.50, category = "birds", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Songbird",                    item = "a_c_songbird_01",             account = "dollars",   price = 0.50, category = "birds", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Sparrow",                     item = "a_c_sparrow_01",              account = "dollars",   price = 0.50, category = "birds", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Wood Pecker",                 item = "a_c_woodpecker_01",           account = "dollars",   price = 0.50, category = "birds", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Robin",                       item = "a_c_robin_01",                account = "dollars",   price = 0.50, category = "birds", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Pigeon",                      item = "a_c_pigeon",                  account = "dollars",   price = 0.50, category = "birds", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Oriole",                      item = "a_c_oriole_01",               account = "dollars",   price = 0.50, category = "birds", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Carolina Parakeet",           item = "a_c_carolinaparakeet_01",     account = "dollars",   price = 0.50, category = "birds", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Blue Jay",                    item = "a_c_bluejay_01",              account = "dollars",   price = 0.50, category = "birds", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Cardinal",                    item = "a_c_cardinal_01",             account = "dollars",   price = 0.50, category = "birds", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Cedar Waxwing",               item = "a_c_cedarwaxwing_01",         account = "dollars",   price = 0.50, category = "birds", requiredLevelingType = false, requiredLevel = 1  },
+
+            -- [SMALL ANIMALS]
+            { label = "Rat",                         item = "a_c_rat_01",                  account = "dollars",   price = 0.60, category = "small_animals", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Chipmunk",                    item = "a_c_chipmunk_01",             account = "dollars",   price = 0.60, category = "small_animals", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Skunk",                       item = "a_c_skunk_01",                account = "dollars",   price = 0.60, category = "small_animals", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Muskrat",                     item = "a_c_muskrat_01",              account = "dollars",   price = 0.60, category = "small_animals", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Possum",                      item = "a_c_possum_01",               account = "dollars",   price = 0.60, category = "small_animals", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Badger",                      item = "a_c_badger_01",               account = "dollars",   price = 0.60, category = "small_animals", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Squirrel",                    item = "a_c_squirrel_01",             account = "dollars",   price = 0.60, category = "small_animals", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Raccoon",                     item = "a_c_raccoon_01",              account = "dollars",   price = 0.60, category = "small_animals", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Rabbit",                      item = "a_c_rabbit_01",               account = "dollars",   price = 0.60, category = "small_animals", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Armadillo",                   item = "a_c_armadillo_01",            account = "dollars",   price = 1.0,  category = "small_animals", requiredLevelingType = false, requiredLevel = 1  },
+
+            -- [REPTILES]
+            { label = "Frogbull",                    item = "a_c_frogbull_01",             account = "dollars",   price = 0.65, category = "reptiles", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Toad",                        item = "a_c_toad_01",                 account = "dollars",   price = 0.65, category = "reptiles", requiredLevelingType = false, requiredLevel = 1  },
+
+            { label = "Black-Tailed Rattlesnake",    item = "a_c_snakeblacktailrattle_01", account = "dollars",   price = 0.65, category = "reptiles", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Snake Fer-De-Lance",          item = "a_c_snakeferdelance_01",      account = "dollars",   price = 0.65, category = "reptiles", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Snake Red Boa",               item = "a_c_snakeredboa_01",          account = "dollars",   price = 0.65, category = "reptiles", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Water Snake",                 item = "a_c_snakewater_01",           account = "dollars",   price = 0.65, category = "reptiles", requiredLevelingType = false, requiredLevel = 1  },
+            { label = "Snake",                       item = "a_c_snake_01",                account = "dollars",   price = 0.65, category = "reptiles", requiredLevelingType = false, requiredLevel = 1  },
+
         },
 
     },
