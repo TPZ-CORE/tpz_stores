@@ -36,9 +36,8 @@ Config.Stores = {
             { type = "weapons",     label = 'Weaponry',   description = '',  types = {"buy"} },
         }, 
         
-
         -- The store name that has been created on Config.StoreProductPackages.
-        StoreProductsPackage = "butcher_store",
+        StoreProductsPackage = "police_store",
     },
 
     ['BUTCHER'] = {
@@ -139,6 +138,22 @@ Config.StoreProductPackages = {
 
         ['sell'] = { -- (!) IsWeapon option does not exist on selling, we do not allow selling weapons.
             { label = "Empty Bottle",           item = "emptybottle",             account = "dollars",   price = 10,    category = "miscellaneous", requiredLevelingType = false, requiredLevel = 1 },
+        },
+
+    },
+
+
+    ['police_store'] = {
+
+        ['buy'] = {
+
+            -- gear
+            { label = "Handcuffs",              item = "handcuffs",                 account = "dollars",   price = 2.0,   isWeapon = false, category = "gear",    requiredLevelingType = false, requiredLevel = 1 },
+            { label = "Handcuff Keys",          item = "handcuffs_key",             account = "dollars",   price = 0.75,  isWeapon = false, category = "gear",    requiredLevelingType = false, requiredLevel = 1 },
+            { label = "Detective's Kit",        item = "detective_kit",             account = "dollars",   price = 5.0,   isWeapon = false, category = "gear",    requiredLevelingType = false, requiredLevel = 1 },
+           
+            -- weapons
+            { label = "Cattleman Revolver",     item = "WEAPON_REVOLVER_CATTLEMAN", account = "dollars",   price = 25,    isWeapon = true,  category = "weapons", requiredLevelingType = false, requiredLevel = 1 },
         },
 
     },
