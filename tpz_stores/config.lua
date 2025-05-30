@@ -23,6 +23,24 @@ Config.tpz_leveling = false
 
 Config.Stores = {
 
+    ['POLICE'] = { -- USED IN tpz_society! 
+
+        StoreName = "POLICE",
+
+        -- THE SPECIFIED STORE IS AN EXAMPLE FOR CUSTOM STORES, A CUSTOM STORE IS FOR GETTING OPENED THROUGH AN EXPORT.
+        -- IT DOES NOT HAVE BLIPS, COORDS, DISTANCE TO OPEN, NPC OR ANYTHING, ONLY PRODUCTS.
+        IsCustom  = true, -- <---------
+
+        Categories = { 
+            { type = "gear",        label = 'Gear',       description = '',  types = {"buy"} },
+            { type = "weapons",     label = 'Weaponry',   description = '',  types = {"buy"} },
+        }, 
+        
+
+        -- The store name that has been created on Config.StoreProductPackages.
+        StoreProductsPackage = "butcher_store",
+    },
+
     ['BUTCHER'] = {
 
         StoreName = "BUTCHER",
@@ -32,7 +50,7 @@ Config.Stores = {
         IsCustom  = true, -- <---------
 
         Categories = { 
-            { type = "hunting",        label = 'Hunting',       description = '',  types = {"sell" } },
+            { type = "hunting",        label = 'Hunting',       description = '',  types = {"sell"} },
             { type = "birds",          label = 'Animals',       description = '',  types = {"sell"} },
             { type = "small_animals",  label = 'Small Animals', description = '',  types = {"sell"} },
             { type = "reptiles",       label = 'Repites',       description = '',  types = {"sell"} },
