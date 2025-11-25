@@ -73,6 +73,11 @@ AddEventHandler('tpz_stores:server:buy', function(storeId, categoryName, item, q
 	local xPlayer        = TPZ.GetPlayer(_source)
 	local PlayerData     = GetPlayerData(_source)
 
+    if xPlayer.hasLostConnection() then 
+        print(string.format('A player with the steam name as: %s and online id: %s, attempted to buy an item from stores while his connection is lost.', GetPlayerName(_source), _source))
+        return 
+    end
+
 	quantity             = tonumber(quantity)
 	quantity             = math.floor(quantity)
 
@@ -189,6 +194,11 @@ AddEventHandler('tpz_stores:server:sell', function(storeId, categoryName, item, 
 	local xPlayer        = TPZ.GetPlayer(_source)
 	local PlayerData     = GetPlayerData(_source)
 
+    if xPlayer.hasLostConnection() then 
+        print(string.format('A player with the steam name as: %s and online id: %s, attempted to sell an item from stores while his connection is lost.', GetPlayerName(_source), _source))
+        return 
+    end
+		
 	quantity             = tonumber(quantity)
 	quantity             = math.floor(quantity)
 
@@ -259,3 +269,4 @@ AddEventHandler('tpz_stores:server:sell', function(storeId, categoryName, item, 
 	end
 
 end)
+
