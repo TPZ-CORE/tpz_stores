@@ -62,6 +62,7 @@ Config.Stores = {
     
     ['GENERAL_STORE_VALENTINE'] = {
 
+        
         StoreName = "GENERAL STORE",
 
         -- THE SPECIFIED STORE IS AN EXAMPLE FOR CUSTOM STORES, A CUSTOM STORE IS FOR GETTING OPENED THROUGH AN EXPORT.
@@ -86,6 +87,349 @@ Config.Stores = {
             Allowed = true,
             Model   = "u_m_m_walgeneralstoreowner_01",
             Coords  = { x = -324.628, y = 803.9818, z = 116.88, h = -81.17 },
+            
+        },
+
+        Hours = { Allowed = true, Opening = 7, Closing = 23 },
+
+        Categories = { 
+            { type = "consumables",   label = 'Consumables',   description = 'Buy consumable items',    types = {"buy"} },
+            { type = "food",          label = 'Food',          description = 'Buy food items',          types = {"buy"} },
+            { type = "miscellaneous", label = 'Miscellaneous', description = 'Buy miscellaneous items', types = {"buy", "sell"} },
+        }, 
+
+        -- Set to false if you don't want any required jobs.
+        -- If you want required jobs, it should be: RequiredJobs = { 'jobname' }
+        RequiredJobs = false,
+
+        -- If the following store is using a Target Script, set HasTarget to true.
+        -- It will disable the prompts.
+        HasTarget = false,
+
+        -- The store name that has been created on Config.StoreProductPackages.
+        StoreProductsPackage = "general_store",
+    },
+
+    ['GENERAL_VAN_HORN'] = {
+
+        StoreName = "GENERAL STORE",
+
+        -- THE SPECIFIED STORE IS AN EXAMPLE FOR CUSTOM STORES, A CUSTOM STORE IS FOR GETTING OPENED THROUGH AN EXPORT.
+        -- IT DOES NOT HAVE BLIPS, COORDS, DISTANCE TO OPEN, NPC OR ANYTHING, ONLY PRODUCTS.
+        IsCustom  = false, -- <---------
+        
+        -- Blip & Store Prompt Action Positions.
+        Coords = { x = 3025.593, y = 562.4566, z = 44.721, h = -81.17 },
+
+        DistanceOpenStore = 3.0,
+        
+        BlipData = { 
+            Allowed = true,
+            Name    = "General Store",
+            Sprite  = 1475879922,
+
+            OpenBlipModifier = 'BLIP_MODIFIER_MP_COLOR_32',
+            DisplayClosedHours = { Enabled = true, Sprite = 1475879922, BlipModifier = "BLIP_MODIFIER_MP_COLOR_2" },
+        },
+
+        NPCData = {
+            Allowed = true,
+            Model   = "u_m_m_walgeneralstoreowner_01",
+            Coords  = {  x = 3025.593, y = 562.4566, z = 44.721, h = -81.17  },
+            
+        },
+
+        Hours = { Allowed = true, Opening = 7, Closing = 23 },
+
+        Categories = { 
+            { type = "consumables",   label = 'Consumables',   description = 'Buy consumable items',    types = {"buy"} },
+            { type = "food",          label = 'Food',          description = 'Buy food items',          types = {"buy"} },
+            { type = "miscellaneous", label = 'Miscellaneous', description = 'Buy miscellaneous items', types = {"buy", "sell"} },
+        }, 
+
+        -- Set to false if you don't want any required jobs.
+        -- If you want required jobs, it should be: RequiredJobs = { 'jobname' }
+        RequiredJobs = false,
+
+        -- If the following store is using a Target Script, set HasTarget to true.
+        -- It will disable the prompts.
+        HasTarget = false,
+
+        -- The store name that has been created on Config.StoreProductPackages.
+        StoreProductsPackage = "general_store",
+    },
+
+    ['GENERAL_EMERALD'] = {
+
+        StoreName = "GENERAL STORE",
+
+        -- THE SPECIFIED STORE IS AN EXAMPLE FOR CUSTOM STORES, A CUSTOM STORE IS FOR GETTING OPENED THROUGH AN EXPORT.
+        -- IT DOES NOT HAVE BLIPS, COORDS, DISTANCE TO OPEN, NPC OR ANYTHING, ONLY PRODUCTS.
+        IsCustom  = false, -- <---------
+        
+        -- Blip & Store Prompt Action Positions.
+        Coords = { x = 1420.664, y = 381.2186, z = 90.330, h = -81.17 },
+
+        DistanceOpenStore = 3.0,
+        
+        BlipData = { 
+            Allowed = true,
+            Name    = "General Store",
+            Sprite  = 1475879922,
+
+            OpenBlipModifier = 'BLIP_MODIFIER_MP_COLOR_32',
+            DisplayClosedHours = { Enabled = true, Sprite = 1475879922, BlipModifier = "BLIP_MODIFIER_MP_COLOR_2" },
+        },
+
+        NPCData = {
+            Allowed = true,
+            Model   = "u_m_m_walgeneralstoreowner_01",
+            Coords  = {  x = 1420.664, y = 381.2186, z = 90.330, h = 181.17  },
+            
+        },
+
+        Hours = { Allowed = true, Opening = 7, Closing = 23 },
+
+        Categories = { 
+            { type = "consumables",   label = 'Consumables',   description = 'Buy consumable items',    types = {"buy"} },
+            { type = "food",          label = 'Food',          description = 'Buy food items',          types = {"buy"} },
+            { type = "miscellaneous", label = 'Miscellaneous', description = 'Buy miscellaneous items', types = {"buy", "sell"} },
+        }, 
+
+        -- Set to false if you don't want any required jobs.
+        -- If you want required jobs, it should be: RequiredJobs = { 'jobname' }
+        RequiredJobs = false,
+
+        -- If the following store is using a Target Script, set HasTarget to true.
+        -- It will disable the prompts.
+        HasTarget = false,
+
+        -- The store name that has been created on Config.StoreProductPackages.
+        StoreProductsPackage = "general_store",
+    },
+
+    ['GENERAL_SAINT_DENIS'] = {
+
+        StoreName = "GENERAL STORE",
+
+        -- THE SPECIFIED STORE IS AN EXAMPLE FOR CUSTOM STORES, A CUSTOM STORE IS FOR GETTING OPENED THROUGH AN EXPORT.
+        -- IT DOES NOT HAVE BLIPS, COORDS, DISTANCE TO OPEN, NPC OR ANYTHING, ONLY PRODUCTS.
+        IsCustom  = false, -- <---------
+        
+        -- Blip & Store Prompt Action Positions.
+        Coords = { x = 2824.5, y = -1319.34, z = 46.755, h = -81.17 },
+
+        DistanceOpenStore = 3.0,
+        
+        BlipData = { 
+            Allowed = true,
+            Name    = "General Store",
+            Sprite  = 1475879922,
+
+            OpenBlipModifier = 'BLIP_MODIFIER_MP_COLOR_32',
+            DisplayClosedHours = { Enabled = true, Sprite = 1475879922, BlipModifier = "BLIP_MODIFIER_MP_COLOR_2" },
+        },
+
+        NPCData = {
+            Allowed = true,
+            Model   = "u_m_m_walgeneralstoreowner_01",
+            Coords  = {  x = 2824.5, y = -1319.34, z = 46.755, h = 311.17  },
+            
+        },
+
+        Hours = { Allowed = true, Opening = 7, Closing = 23 },
+
+        Categories = { 
+            { type = "consumables",   label = 'Consumables',   description = 'Buy consumable items',    types = {"buy"} },
+            { type = "food",          label = 'Food',          description = 'Buy food items',          types = {"buy"} },
+            { type = "miscellaneous", label = 'Miscellaneous', description = 'Buy miscellaneous items', types = {"buy", "sell"} },
+        }, 
+
+        -- Set to false if you don't want any required jobs.
+        -- If you want required jobs, it should be: RequiredJobs = { 'jobname' }
+        RequiredJobs = false,
+
+        -- If the following store is using a Target Script, set HasTarget to true.
+        -- It will disable the prompts.
+        HasTarget = false,
+
+        -- The store name that has been created on Config.StoreProductPackages.
+        StoreProductsPackage = "general_store",
+    },
+
+    ['GENERAL_STRAWBERRY'] = {
+
+        StoreName = "GENERAL STORE",
+
+        -- THE SPECIFIED STORE IS AN EXAMPLE FOR CUSTOM STORES, A CUSTOM STORE IS FOR GETTING OPENED THROUGH AN EXPORT.
+        -- IT DOES NOT HAVE BLIPS, COORDS, DISTANCE TO OPEN, NPC OR ANYTHING, ONLY PRODUCTS.
+        IsCustom  = false, -- <---------
+        
+        -- Blip & Store Prompt Action Positions.
+        Coords = { x = -1789.74, y = -388.154, z = 160.32, h = -81.17 },
+
+        DistanceOpenStore = 3.0,
+        
+        BlipData = { 
+            Allowed = true,
+            Name    = "General Store",
+            Sprite  = 1475879922,
+
+            OpenBlipModifier = 'BLIP_MODIFIER_MP_COLOR_32',
+            DisplayClosedHours = { Enabled = true, Sprite = 1475879922, BlipModifier = "BLIP_MODIFIER_MP_COLOR_2" },
+        },
+
+        NPCData = {
+            Allowed = true,
+            Model   = "u_m_m_walgeneralstoreowner_01",
+            Coords  = {  x = -1789.74, y = -388.154, z = 160.32, h = 51.17  },
+            
+        },
+
+        Hours = { Allowed = true, Opening = 7, Closing = 23 },
+
+        Categories = { 
+            { type = "consumables",   label = 'Consumables',   description = 'Buy consumable items',    types = {"buy"} },
+            { type = "food",          label = 'Food',          description = 'Buy food items',          types = {"buy"} },
+            { type = "miscellaneous", label = 'Miscellaneous', description = 'Buy miscellaneous items', types = {"buy", "sell"} },
+        }, 
+
+        -- Set to false if you don't want any required jobs.
+        -- If you want required jobs, it should be: RequiredJobs = { 'jobname' }
+        RequiredJobs = false,
+
+        -- If the following store is using a Target Script, set HasTarget to true.
+        -- It will disable the prompts.
+        HasTarget = false,
+
+        -- The store name that has been created on Config.StoreProductPackages.
+        StoreProductsPackage = "general_store",
+    },
+
+    ['GENERAL_BLACKWATER'] = {
+
+        StoreName = "GENERAL STORE",
+
+        -- THE SPECIFIED STORE IS AN EXAMPLE FOR CUSTOM STORES, A CUSTOM STORE IS FOR GETTING OPENED THROUGH AN EXPORT.
+        -- IT DOES NOT HAVE BLIPS, COORDS, DISTANCE TO OPEN, NPC OR ANYTHING, ONLY PRODUCTS.
+        IsCustom  = false, -- <---------
+        
+        -- Blip & Store Prompt Action Positions.
+        Coords = { x = -784.660, y = -1322.19, z = 43.884, h = -81.17 },
+
+        DistanceOpenStore = 3.0,
+        
+        BlipData = { 
+            Allowed = true,
+            Name    = "General Store",
+            Sprite  = 1475879922,
+
+            OpenBlipModifier = 'BLIP_MODIFIER_MP_COLOR_32',
+            DisplayClosedHours = { Enabled = true, Sprite = 1475879922, BlipModifier = "BLIP_MODIFIER_MP_COLOR_2" },
+        },
+
+        NPCData = {
+            Allowed = true,
+            Model   = "u_m_m_walgeneralstoreowner_01",
+            Coords  = {  x = -784.660, y = -1322.19, z = 43.884, h = 191.17  },
+            
+        },
+
+        Hours = { Allowed = true, Opening = 7, Closing = 23 },
+
+        Categories = { 
+            { type = "consumables",   label = 'Consumables',   description = 'Buy consumable items',    types = {"buy"} },
+            { type = "food",          label = 'Food',          description = 'Buy food items',          types = {"buy"} },
+            { type = "miscellaneous", label = 'Miscellaneous', description = 'Buy miscellaneous items', types = {"buy", "sell"} },
+        }, 
+
+        -- Set to false if you don't want any required jobs.
+        -- If you want required jobs, it should be: RequiredJobs = { 'jobname' }
+        RequiredJobs = false,
+
+        -- If the following store is using a Target Script, set HasTarget to true.
+        -- It will disable the prompts.
+        HasTarget = false,
+
+        -- The store name that has been created on Config.StoreProductPackages.
+        StoreProductsPackage = "general_store",
+    },
+
+    ['GENERAL_ARMADILO'] = {
+
+        StoreName = "GENERAL STORE",
+
+        -- THE SPECIFIED STORE IS AN EXAMPLE FOR CUSTOM STORES, A CUSTOM STORE IS FOR GETTING OPENED THROUGH AN EXPORT.
+        -- IT DOES NOT HAVE BLIPS, COORDS, DISTANCE TO OPEN, NPC OR ANYTHING, ONLY PRODUCTS.
+        IsCustom  = false, -- <---------
+        
+        -- Blip & Store Prompt Action Positions.
+        Coords = { x = -3687.35, y = -2623.32, z = -13.43, h = -81.17 },
+
+        DistanceOpenStore = 3.0,
+        
+        BlipData = { 
+            Allowed = true,
+            Name    = "General Store",
+            Sprite  = 1475879922,
+
+            OpenBlipModifier = 'BLIP_MODIFIER_MP_COLOR_32',
+            DisplayClosedHours = { Enabled = true, Sprite = 1475879922, BlipModifier = "BLIP_MODIFIER_MP_COLOR_2" },
+        },
+
+        NPCData = {
+            Allowed = true,
+            Model   = "u_m_m_walgeneralstoreowner_01",
+            Coords  = {  x = -3687.35, y = -2623.32, z = -13.43, h = 281.17  },
+            
+        },
+
+        Hours = { Allowed = true, Opening = 7, Closing = 23 },
+
+        Categories = { 
+            { type = "consumables",   label = 'Consumables',   description = 'Buy consumable items',    types = {"buy"} },
+            { type = "food",          label = 'Food',          description = 'Buy food items',          types = {"buy"} },
+            { type = "miscellaneous", label = 'Miscellaneous', description = 'Buy miscellaneous items', types = {"buy", "sell"} },
+        }, 
+
+        -- Set to false if you don't want any required jobs.
+        -- If you want required jobs, it should be: RequiredJobs = { 'jobname' }
+        RequiredJobs = false,
+
+        -- If the following store is using a Target Script, set HasTarget to true.
+        -- It will disable the prompts.
+        HasTarget = false,
+
+        -- The store name that has been created on Config.StoreProductPackages.
+        StoreProductsPackage = "general_store",
+    },
+
+    ['GENERAL_TUMBLEWEED'] = {
+
+        StoreName = "GENERAL STORE",
+
+        -- THE SPECIFIED STORE IS AN EXAMPLE FOR CUSTOM STORES, A CUSTOM STORE IS FOR GETTING OPENED THROUGH AN EXPORT.
+        -- IT DOES NOT HAVE BLIPS, COORDS, DISTANCE TO OPEN, NPC OR ANYTHING, ONLY PRODUCTS.
+        IsCustom  = false, -- <---------
+        
+        -- Blip & Store Prompt Action Positions.
+        Coords = { x = -5485.87, y = -2938.04, z = -0.399, h = -81.17 },
+
+        DistanceOpenStore = 3.0,
+        
+        BlipData = { 
+            Allowed = true,
+            Name    = "General Store",
+            Sprite  = 1475879922,
+
+            OpenBlipModifier = 'BLIP_MODIFIER_MP_COLOR_32',
+            DisplayClosedHours = { Enabled = true, Sprite = 1475879922, BlipModifier = "BLIP_MODIFIER_MP_COLOR_2" },
+        },
+
+        NPCData = {
+            Allowed = true,
+            Model   = "u_m_m_walgeneralstoreowner_01",
+            Coords  = {  x = -5485.87, y = -2938.04, z = -0.399, h = 111.17  },
             
         },
 
@@ -264,3 +608,4 @@ function SendNotification(source, message, messageType)
     end
   
 end
+
