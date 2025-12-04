@@ -19,12 +19,12 @@ Locales = {
   ['PRESS_TO_BUY']                          = "Press to buy %s for %s %s",
   ['PRESS_TO_SELL']                         = "Press to sell %s for %s %s",
 
-  ['INPUT_BUY_DESCRIPTION']                 = "How much quantity would you like to buy?",
-  ['INPUT_SELL_DESCRIPTION']                = "How much quantity would you like to sell?",
-  ['INPUT_BUY_COST_DESCRIPTION']            = "You will pay: ",
-  ['INPUT_SELL_COST_DESCRIPTION']           = "You will receive: ",
-  ['INPUT_DOLLARS']                         = " dollars", 
-  ['INPUT_GOLD']                            = " gold", 
+  ['INPUT_BUY_DESCRIPTION']                 = "How much quantity would you like to buy?", -- 1.0.2
+  ['INPUT_SELL_DESCRIPTION']                = "How much quantity would you like to sell?", -- 1.0.2
+  ['INPUT_BUY_COST_DESCRIPTION']            = "You will pay: ", -- 1.0.2
+  ['INPUT_SELL_COST_DESCRIPTION']           = "You will receive: ", -- 1.0.2
+  ['INPUT_DOLLARS']                         = " dollars",  -- 1.0.2
+  ['INPUT_GOLD']                            = " gold",  -- 1.0.2
   
   ['INPUT_ACTION_BUTTON']                   = 'CONFIRM',
   ['INPUT_DECLINE_BUTTON']                  = 'CANCEL',
