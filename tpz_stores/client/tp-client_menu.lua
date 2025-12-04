@@ -204,12 +204,15 @@ function OpenStoreCategoryByCategoryActionType(storeId, categoryName, configData
 
                     local inputData = {
                         title = SelectedItemData.title,
-                        desc  = string.format(Locales['INPUT_' .. string.upper(actionType) .. '_DESCRIPTION'], SelectedItemData.cost, Locales[string.upper(SelectedItemData.account)]),
+                        desc  = Locales['INPUT_' .. string.upper(actionType) .. '_DESCRIPTION']),
                         buttonparam1 = Locales['INPUT_ACTION_BUTTON'],
-                        buttonparam2 = Locales['INPUT_DECLINE_BUTTON']
+                        buttonparam2 = Locales['INPUT_DECLINE_BUTTON'],
+                        cost             = SelectedItemData.cost,
+			            cost_description = Locales['INPUT_' .. string.upper(actionType) .. '_COST_DESCRIPTION'],
+			            cost_currency    = Locales['INPUT_' .. string.upper(SelectedItemData.account)],
                     }
             
-                    TriggerEvent("tpz_inputs:getTextInput", inputData, function(cb)
+                    TriggerEvent("tpz_inputs:getAdvancedSliderResult", inputData, function(cb)
             
                         if tonumber(cb) == nil or tonumber(cb) <= 0 then
 
